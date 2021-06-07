@@ -22,3 +22,9 @@ positional arguments:
 optional arguments:
   -h, --help  show this help message and exit
 ```
+
+Intervals may be wrapped in brackets (depending on your `$SHELL`, quotes might be required, too).
+
+```bash
+$ python merge.py "[1,3]" "[5,6]" "[3,9]" "[13,20]"
+```

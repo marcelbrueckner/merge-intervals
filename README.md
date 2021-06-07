@@ -17,7 +17,7 @@ usage: merge.py [-h] interval [interval ...]
 Merge probably overlapping intervals into non-overlapping intervals.
 
 positional arguments:
-  interval    list of intervals to merge (example: 1,3 3,9)
+  interval    list of intervals to merge (example: -1,3 3,9)
 
 optional arguments:
   -h, --help  show this help message and exit

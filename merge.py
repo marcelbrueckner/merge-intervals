@@ -28,4 +28,28 @@ parser.add_argument('intervals', metavar='interval', type=interval, nargs='+',
                     help='list of intervals to merge (example: -1,3 3,9)')
 args = parser.parse_args()
 
-print(args)
+# Merge intervals
+merged_interval = None
+merged_intervals = []
+for i, current_interval in enumerate(sorted(args.intervals)):
+
+    # First iteration
+    if merged_interval is None:
+        merged_interval = current_interval
+
+    # Current interval overlaps with the previous(ly merged) interval(s)
+    if current_interval[0] <= merged_interval[1]:
+        merged_interval[1] = max(current_interval[1], merged_interval[1])
+
+    # Current interval doesn't overlap with previous(ly merged) inverval(s)
+    # As intervals are sorted by the interval's lower limit, no other interval at a higher index will.
+    # Thus the previous(ly merged) inverval(s) are "complete".
+    else:
+        merged_intervals.append(merged_interval)
+        merged_interval = current_interval
+
+    # Last iteration
+    if i == len(args.intervals) - 1:
+        merged_intervals.append(merged_interval)
+
+print(merged_intervals)

@@ -6,14 +6,14 @@ import re, sys
 # Define a custom argument type `interval` to properly parse arguments
 # https://docs.python.org/3/library/argparse.html#type
 def interval(arg):
-    pattern = re.compile("^\s*\[?(-?\d+,-?\d+)\]?$")
+    pattern = re.compile("^\s*\[?\s*(-?\s*(\d\s*)+,\s*-?\s*(\d\s*)+)\]?\s*$")
     match = pattern.match(arg)
 
     if not match:
         raise ArgumentError
 
     # Convert comma-separated list (of strings) to list of integers
-    arg = match.group(1)
+    arg = match.group(1).replace(" ", "")
     return sorted([int(i) for i in arg.split(",")])
 
 # argparse has issues with parameters starting with a negative integer value,

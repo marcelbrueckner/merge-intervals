@@ -14,7 +14,7 @@ def interval_int(arg):
     match = pattern.match(arg)
 
     if not match:
-        raise ArgumentError
+        raise ArgumentError(None, f"argument interval: invalid interval value: '{arg}'")
 
     # Convert comma-separated list (of strings) to list of integers
     arg = match.group(1).replace(" ", "")

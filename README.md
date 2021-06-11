@@ -5,6 +5,19 @@ A demo project which takes a space-separated list of possibly overlapping interv
 * **Example input:** `1,3 5,6 3,9 13,20`
 * **Example output:** `1,9 13,20`
 
+## Prerequisites
+
+You will need a Python 3 (virtual) environment and some package dependencies installed.
+
+```bash
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip install -U pip
+$ pip install -r requirements.txt
+```
+
+Alternatively, run `make venv` or `make venv-dev` to set up your virtual environment.
+
 ## Usage
 
 The main program is called `merge.py` and is simply fed with a list of intervals as arguments.
@@ -28,6 +41,8 @@ Intervals may be wrapped in brackets (depending on your `$SHELL`, quotes might b
 ```bash
 $ python merge.py "[1,3]" "[5,6]" "[3,9]" "[13,20]"
 ```
+
+Execute `make run` to run the application with example data.
 
 ## Why Python?
 

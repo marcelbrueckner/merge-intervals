@@ -152,3 +152,7 @@ MEM 18.527344 1623450394.4514
 
 <img src="mprofile_smallint.png" alt="Memory consumption merging small integers" width="800"/>
 <img src="mprofile_bigint.png" alt="Memory consumption merging big integers" width="800"/>
+
+## License
+
+MIT

@@ -23,7 +23,7 @@ build: merge.py Dockerfile
 .PHONY: run
 run: merge.py
 	@if [ -d ".venv" ]; then source $$(pwd)/.venv/bin/activate; fi
-	python merge.py "[1,3]" "[5,6]" "[3,9]" "[13,20]"
+	python merge.py --verbose "[1,3]" "[5,6]" "[3,9]" "[13,20]"
 
 # Run tests
 .PHONY: test

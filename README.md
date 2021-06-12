@@ -59,7 +59,6 @@ That said, the performance of this code isn't too bad on my 10+ years old machin
 
 ```bash
 $ time python merge.py "[1,3]" "[5,6]" "[3,9]" "[13,20]"
-[[1, 9], [13, 20]]
 python merge.py "[1,3]" "[5,6]" "[3,9]" "[13,20]"  0,15s user 0,18s system 111% cpu 0,297 total
 ```
 

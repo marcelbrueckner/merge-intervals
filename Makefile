@@ -10,6 +10,7 @@ venv:
 
 .PHONY: venv-dev
 venv-dev:
+	@if [ ! -d ".venv" ]; then python3 -m venv .venv; fi
 	@source $$(pwd)/.venv/bin/activate; pip install -U pip; pip install -r requirements-dev.txt;
 	@echo "Python virtual environment has been installed/updated with development requirements."
 	@echo "Run 'source .venv/bin/activate' to activate."
